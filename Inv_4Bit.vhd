@@ -41,4 +41,3 @@ begin
  X <= not A;
 
 end Behavioral;
-
