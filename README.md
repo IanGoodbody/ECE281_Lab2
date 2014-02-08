@@ -31,7 +31,7 @@ Analyzing the truth table yielded the following equaitons and schematic:
     Cout = (A and B) or (Cin and (A or B))
 
 
-![alt text](https://github.com/IanGoodbody/ECE281_Lab2/blob/master/Full_Adder_Schematic.JPG "Adder Schematic")
+![alt text](https://raw2.github.com/IanGoodbody/ECE281_Lab2/master/Full_Adder_Schematic.JPG "Adder Schematic")
 
 The behavioral VHDL model and a corresponding testbench were created from the equations and schematic above and the signals
 provided in the truth table were tested and the output is shown below. The bottom row corresponds with the above truth
@@ -40,4 +40,4 @@ S and Cout respectively, were tested by matching the expected truth table output
 expected values in the truth table above. The signals and truth table matched, providing a good level of confidence for
 the future success of the single bit adder in the fully functional design.
 
-![alt text](https://github.com/IanGoodbody/ECE281_Lab2/blob/master/Full_Adder_Signalc.JPG "Adder TestBench Signal")
+![alt text](https://raw2.github.com/IanGoodbody/ECE281_Lab2/master/Full_Adder_Signal.JPG "Adder TestBench Signal")
