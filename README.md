@@ -3,7 +3,7 @@ ECE281_Lab2
 
 Adder Circuit
 
-### Prelab
+### Prelab: 1 Bit Adder
 
 The Prelab objective was to create a functional 2 bit adder capable of later being formed into a fully functional
 8 bit ripple-carry adder.
@@ -41,3 +41,22 @@ expected values in the truth table above. The signals and truth table matched, p
 the future success of the single bit adder in the fully functional design.
 
 ![alt text](https://raw2.github.com/IanGoodbody/ECE281_Lab2/master/Full_Adder_Signal.JPG "Adder TestBench Signal")
+
+### Main Lab: 4 Bit Adder and Subtractor
+
+The adder and subtractor unit was designed based on the ALU model given in the course text _Digitial Design and Computer
+Architecture_ on page 249. The four bit adder would be constructed by arranging four 1 bit adders in a carry ripple 
+configuration. Although this adder model is known for slow processing time, the time delay would be negligible in a four
+bit adder. The adder was to the be default device state while the subtractor would be added by giving a sutraction 
+select signal. This signal woudl activate a multiplexer which would direct an inverted B signal into the 4 bit adder, 
+and the high signal from the selector switch would be routed into the adder's carry in input to complete forming the 
+two's complement of B and adding it to A to give the difference between the two numbers. See the schematic below
+
+(*Insert Schamatic Here*)
+
+To implement the entire design as a structural VHDL model behavioral models for the 4 bit inverter and the 4 bit 2-1 
+multiplexer were created and the 4 bit adder compoent was created as a structural combination of four 1 bit adder
+components. The structural design was then formed by combining these componets according to the schematic above. 
+
+The constraints file was designed so that the switches on the NEXYS board gave the binary inputs, the LED's gave the sum
+output and the carry flag, and the button acted as the subtraction selector switch. 
