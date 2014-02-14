@@ -52,11 +52,30 @@ select signal. This signal woudl activate a multiplexer which would direct an in
 and the high signal from the selector switch would be routed into the adder's carry in input to complete forming the 
 two's complement of B and adding it to A to give the difference between the two numbers. See the schematic below
 
-(*Insert Schamatic Here*)
+![alt text](https://raw2.github.com/IanGoodbody/ECE281_Lab2/master/Full_Adder_Signal.JPG "Adder/Subtractor Schematic")
 
-To implement the entire design as a structural VHDL model behavioral models for the 4 bit inverter and the 4 bit 2-1 
-multiplexer were created and the 4 bit adder compoent was created as a structural combination of four 1 bit adder
-components. The structural design was then formed by combining these componets according to the schematic above. 
+The Adder/Subtractor design called for additional components in the form of a 4 bit inverter and a 4 bit 2-1 multiplexer.
+Behavioral models of these components were created, while the 4 bit carry ripple adder was created as a structural
+combination of 4 of the 1 bit adders created in the prelab. All these components were combined in a seperate structural
+VHDL file to complete the design.
 
-The constraints file was designed so that the switches on the NEXYS board gave the binary inputs, the LED's gave the sum
-output and the carry flag, and the button acted as the subtraction selector switch. 
+To prefrorm a spot-check of the design, it was decided that moving foward to the FPGA implementation would be most
+effecient. Although moving forward to the physical implementation prior to testing with a testbench simulation does not
+follow the engineering method, the fact that the FPGA can be programmed and reprogrammed at no cost negates the reason for
+this traditional process as it accounts for the fact that physical circuits usually involve a far greater investment of 
+resouces and funds than does a testbench simulation. Additionally, a successful spot check would have, and ultimately did,
+increase the general happiness and morale of the engineer involved and increase productivity.
+
+The constraints file was created for the NEXYS 2 FPGA. The four A bits were set as the rightmost four switches with the
+least signficant bit as the rithmost of those switches. Conversely, the four B bits were set as the leftmost four switches
+with the LSB as the rightmost of those switches. The output LEDs were set so the four rightmost LEDs represented the Sum
+output with the LSB as the rightmost LED. The fifth LED from the right of the row (LD4) was set as the carry flag. The
+add/subtract selector input was set to the leftmost pushbutton (BTN3).
+
+The spot check was carried out by comparing the inputs and outputs on the circuit board to handwritten binary calculations.
+The specific input conditions for this test were not recorded, however, the spot testing did suggest that the design was 
+successful. Furthermore, the the spot check did reveal minor problems with the human interface and usability of the FPGA
+implementation. The carry flag, being directly adjascent to the sum array output often lead to erroneous readings, and 
+setting the A array to the rightmost switches, and the B array to the leftmost switcehs, is counterintuitive to the use of
+the subtraction mechinism as the user saw the system as DIFFERENCE = -B + A, rather than the more natural DIFFERENCE = A -B.
+In response the Carry flag was moved to the leftmost LED (LD7) and the A array and B array inputs were switched.

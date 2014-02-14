@@ -1,0 +1,23 @@
+# Adder Subtractor Device Constraints file
+
+# Slide Switches
+NET "B<0>" LOC = "G18"; #Board ID: SW0
+NET "B<1>" LOC = "H18"; #Board ID: SW1
+NET "B<2>" LOC = "K18"; #Board ID: SW2
+NET "B<3>" LOC = "K17"; #Board ID: SW3
+
+NET "A<0>" LOC = "L14"; #Board ID: SW4
+NET "A<1>" LOC = "L13"; #Board ID: SW5
+NET "A<2>" LOC = "N17"; #Board ID: SW6
+NET "A<3>" LOC = "R17"; #Board ID: SW7
+
+# Button Substractoin selector 
+NET "SubIn" LOC = "H13"; #Board ID: BTN3
+
+# LED Output
+NET "S<0>" LOC = "J14"; #Board ID: LD0
+NET "S<1>" LOC = "J15"; #Board ID: LD1
+NET "S<2>" LOC = "K15"; #Board ID: LD2
+NET "S<3>" LOC = "K14"; #Board ID: LD3
+
+NET "Cout" LOC = "R4"; #Board ID: LD7
