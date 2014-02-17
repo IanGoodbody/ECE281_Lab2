@@ -26,7 +26,7 @@ entity Full_Adder_4Bit is
            B : in  STD_LOGIC_VECTOR (3 downto 0);
            Cin : in  STD_LOGIC;
            S : out  STD_LOGIC_VECTOR (3 downto 0);
-           Cout : out  STD_LOGIC);
+           OvF: out  STD_LOGIC);
 end Full_Adder_4Bit;
 
 architecture Structural of Full_Adder_4Bit is
@@ -41,7 +41,7 @@ component Full_Adder is
 end component Full_Adder;
 
 --Intermediate carry Signals
-signal C0, C1, C2 : STD_LOGIC;
+signal C0, C1, C2, C3 : STD_LOGIC;
 
 begin
 --Add single adders together in a ripple carry sequence
@@ -71,7 +71,7 @@ Add3: component Full_Adder
 				B => B(3),
 				Cin => C2,
 				S => S(3),
-				Cout => Cout);
-
+				Cout => C3);
+	OvF <= C2 xor C3;
 end Structural;
 

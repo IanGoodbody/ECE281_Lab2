@@ -79,3 +79,9 @@ implementation. The carry flag, being directly adjascent to the sum array output
 setting the A array to the rightmost switches, and the B array to the leftmost switcehs, is counterintuitive to the use of
 the subtraction mechinism as the user saw the system as DIFFERENCE = -B + A, rather than the more natural DIFFERENCE = A -B.
 In response the Carry flag was moved to the leftmost LED (LD7) and the A array and B array inputs were switched.
+
+Lastly the spot test revealed revealed that the Overflow flag was acting as a carry-out flag. Because the device operates by
+adding two unsigned 4 bit binary numbers and subtracting two 2's compliment numbers, overflow occures in addition when the
+carry out flag is triggered, and for subtraction overflow triggeres when after the two's compliment has been taken, the MSBs
+of the two inputs are the same, and produce a different MSB on the output. This corresponds with adding two positive or 
+negative numbers, and producing a negative or positive number respectively.

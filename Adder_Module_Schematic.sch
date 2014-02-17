@@ -27,7 +27,7 @@
         <signal name="XLXN_36" />
         <signal name="XLXN_37" />
         <signal name="XLXN_38" />
-        <signal name="XLXN_39" />
+        <signal name="XLXN_45" />
         <blockdef name="ibuf">
             <timestamp>2000-1-1T10:10:10</timestamp>
             <line x2="64" y1="0" y2="-64" x1="64" />
@@ -219,8 +219,8 @@
             <blockpin signalname="XLXN_29" name="B2" />
             <blockpin signalname="XLXN_30" name="B3" />
             <blockpin signalname="XLXN_26" name="CI" />
-            <blockpin signalname="XLXN_39" name="CO" />
-            <blockpin name="OFL" />
+            <blockpin name="CO" />
+            <blockpin signalname="XLXN_45" name="OFL" />
             <blockpin signalname="XLXN_38" name="S0" />
             <blockpin signalname="XLXN_37" name="S1" />
             <blockpin signalname="XLXN_36" name="S2" />
@@ -246,8 +246,8 @@
             <blockpin signalname="XLXN_29" name="O2" />
             <blockpin signalname="XLXN_30" name="O3" />
         </block>
-        <block symbolname="obuf" name="XLXI_31">
-            <blockpin signalname="XLXN_39" name="I" />
+        <block symbolname="obuf" name="XLXI_34">
+            <blockpin signalname="XLXN_45" name="I" />
             <blockpin name="O" />
         </block>
     </netlist>
@@ -339,6 +339,7 @@
             <wire x2="1952" y1="1088" y2="1088" x1="1744" />
             <wire x2="2032" y1="1088" y2="1088" x1="1952" />
             <wire x2="1952" y1="1088" y2="1712" x1="1952" />
+            <wire x2="1952" y1="1712" y2="1920" x1="1952" />
             <wire x2="1056" y1="1088" y2="1120" x1="1056" />
             <wire x2="1056" y1="1120" y2="1136" x1="1056" />
             <wire x2="1952" y1="1712" y2="1712" x1="1104" />
@@ -376,11 +377,12 @@
         <text style="fontsize:56;fontname:Arial" x="920" y="2448">Sum Array</text>
         <text style="fontsize:56;fontname:Arial" x="1152" y="1948">4 Bit Carry Ripple Adder</text>
         <text style="fontsize:56;fontname:Arial" x="912" y="1472">Subtraction Select Mux Array</text>
-        <instance x="304" y="2288" name="XLXI_31" orien="R90" />
-        <branch name="XLXN_39">
-            <wire x2="336" y1="2160" y2="2288" x1="336" />
-        </branch>
-        <text style="fontsize:56;fontname:Arial" x="16" y="2404">Carry Flag</text>
         <instance x="432" y="160" name="XLXI_7" orien="R90" />
+        <text style="fontsize:56;fontname:Arial" x="1388" y="2344">Overflow Indiator</text>
+        <branch name="XLXN_45">
+            <wire x2="400" y1="2160" y2="2288" x1="400" />
+        </branch>
+        <instance x="368" y="2288" name="XLXI_34" orien="R90" />
+        <text style="fontsize:56;fontname:Arial" x="224" y="2568">Overflow Flag</text>
     </sheet>
 </drawing>

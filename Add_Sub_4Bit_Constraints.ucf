@@ -20,4 +20,4 @@ NET "S<1>" LOC = "J15"; #Board ID: LD1
 NET "S<2>" LOC = "K15"; #Board ID: LD2
 NET "S<3>" LOC = "K14"; #Board ID: LD3
 
-NET "Cout" LOC = "R4"; #Board ID: LD7
+NET "OvF" LOC = "R4"; #Board ID: LD7

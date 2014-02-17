@@ -25,11 +25,11 @@ entity Add_Sub_4Bit is
     Port ( A : in  STD_LOGIC_VECTOR (3 downto 0);
            B : in  STD_LOGIC_VECTOR (3 downto 0);
            SubIn : in  STD_LOGIC;
-           Cout : out  STD_LOGIC;
+			  OvF : out  STD_LOGIC;
            S : out  STD_LOGIC_VECTOR (3 downto 0));
 end Add_Sub_4Bit;
 
-architecture Behavioral of Add_Sub_4Bit is
+architecture Structural of Add_Sub_4Bit is
 
 --Add Adder, Inverter, and Mux Components
 
@@ -38,7 +38,7 @@ component Full_Adder_4Bit is
 			B : in STD_LOGIC_VECTOR (3 downto 0);
 			Cin : in STD_LOGIC;
 			S : out STD_LOGIC_VECTOR (3 downto 0);
-			Cout : out STD_LOGIC);
+			OvF : out STD_LOGIC);
 end component Full_Adder_4Bit;
 
 component Inv_4Bit is
@@ -55,7 +55,7 @@ end component Mux_4Bit;
 
 --Intermediate signals, Mux output, adn inverted B
 
-signal MuxOut, InvB : STD_LOGIC_VECTOR (3 downto 0);
+signal MuxOut, InvB: STD_LOGIC_VECTOR (3 downto 0);
 
 begin
 
@@ -74,7 +74,7 @@ AddModule: component Full_Adder_4Bit
 				B => MuxOut,
 				Cin => SubIn,
 				S => S,
-				Cout => Cout);
+				OvF => OvF);
 
-end Behavioral;
+end Structural;
 
