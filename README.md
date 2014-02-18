@@ -114,7 +114,7 @@ how get VHDL signed number addition and subtraction to evaluate and successfully
 as a result the simulated waveforms showed the correct responses while the console showed an error for every single
 evaluation for values that did not match the simulation as can be seen below.
 
-![alt text](https://raw2.github.com/IanGoodbody/ECE281_Lab2/master/Full_Adder_Signal.JPG "After trying different version of the code with no apparent change the designer got frustrated and gave up before he punched a hole through his monitor.")
+![alt text](https://raw2.github.com/IanGoodbody/ECE281_Lab2/master/Add_Sub_4Bit_Waveform.JPG "After trying different version of the code with no apparent change the designer got frustrated and gave up before he punched a hole through his monitor.")
 
 ### Conclusion
 
